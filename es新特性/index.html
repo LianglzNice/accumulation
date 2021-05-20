@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //replaceAll
+        let str = 'asd ajk';
+        let val = str.replaceAll('a', '456');
+        
+        //数字分隔符
+        let num = 1000_000_000;
+        console.log(num);
+
+        //逻辑赋值运算符
+        let a = 123;
+        a ||= '567'
+        console.log(a);
+
+        //promise.any()     以第一个成功的为准（失败不管）
+        //promise.race()    以第一个完成的为准（无论成功失败）
+        (async () => {
+            let data = await Promise.any([
+                new Promise((resolve, reject) => {
+                    setTimeout(() => { 
+                        reject();
+                        //resolve(1000)
+                    }, 1000)
+                }),
+                new Promise((resolve, reject) => {
+                    setTimeout(() => { 
+                        resolve(1500) 
+                    }, 1500)
+                }),
+            ])
+
+            console.log(data);
+        })()
+        
+        //本地格式化
+        let arr = ['a', 'b', 'c'];
+        console.log(new Intl.ListFormat('zh').format(arr));
+
+        let oDate = new Date();
+        console.log(new Intl.DateTimeFormat('zh').format(oDate));
+    </script>
+</body>
+</html>
