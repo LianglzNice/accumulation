@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .p{
+            font-size: 48px;
+            font-family: "Source Han Sans CN";
+            color: rgb(12, 11, 14);
+            line-height: 1.312;
+            text-align: center;
+            position: absolute;
+            left: 251px;
+            top: 140.698px;
+            z-index: 68;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul">
+        <li>
+            <p>我是个title1</p>
+        </li>
+        <li>
+            <p>我是个title2</p>
+        </li>
+        <li>
+            <p>我是个title3</p>
+        </li>
+        <li>
+            <p>我是个title4</p>
+        </li>
+        <li>
+            <p>我是个title5</p>
+        </li>
+    </ul>
+    <button id="add">添加</button>
+</body>
+<script>
+    var ul = document.getElementById('ul');
+    var add = document.getElementById('add');
+    ul.onclick = function(e){
+        e = e || window.event;
+        var target = e.target;
+        if(target.nodeName.toLowerCase() == 'p'){
+            var txt = target.innerHTML;
+            console.log(txt);
+        }
+    }
+
+    add.onclick = function(){
+        var li = document.createElement('li');
+        li.innerHTML = '<p>我是个title6</p>';
+        ul.appendChild(li);
+    }
+
+    var xxx = '';
+    console.log(xxx.indexOf('aa'));
+</script>
+</html>
