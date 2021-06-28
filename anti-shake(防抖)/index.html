@@ -9,5 +9,16 @@
 <body>
     <input type="text" placeholder="搜索" onkeydown="keydown()">
     <script src="./index.js"></script>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://115.236.44.181:9798/api/v1/wkcall/audio/in-18957190830-057181134734-1622622950.2869564-20210602163550.wav', true);
+        xhr.responseType = "blob";
+        xhr.timeout = 0;
+        xhr.send();
+        // var a = document.createElement("a");
+        // a.setAttribute("href", 'http://115.236.44.181:9798/api/v1/wkcall/audio/in-18957190830-057181134734-1622622950.2869564-20210602163550.wav');
+        // a.click()
+        // document.body.appendChild(a);
+    </script>
 </body>
 </html>
